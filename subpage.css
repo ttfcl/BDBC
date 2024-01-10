@@ -1,0 +1,231 @@
+@font-face {
+    font-family: "gFont";
+    src: url("../font/Pretendard-Regular.ttf") format('truetype');
+}
+* {
+    box-sizing: border-box;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-family: "gFont";
+}
+body {
+    box-sizing: border-box;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+/*로고영역*/
+#logoSection {
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*네비바영역*/
+#navSeciton {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid white;
+}
+nav {
+    background-color: black;
+    border: 1px solid rgba(128, 128, 128, 0.438);
+}
+#navBox {
+    width: 100%; 
+    display: flex; 
+    justify-content: space-evenly;
+}
+.nav-item {
+    padding: 0px 5px;
+}
+.nav-link {
+    color: white;
+}
+.nav-link:focus, .nav-link:hover {
+    color: yellow;
+}
+.highlight {
+    color: yellow;
+}
+@media (max-width: 992px) {
+    #navSeciton {
+        width: 100%;
+    }
+    nav {
+        border-radius: 0px;
+        border: none;
+    }
+    #navBox {
+        width: 100%; 
+        display: flex; 
+        justify-content: left
+    }
+    #navbarSupportedContent {
+        margin-top: 20px;
+    }
+    .nav-item {
+        width: 100%;
+    }
+    .nav-link {
+        padding-left: 10px;
+    }
+}
+
+/*바디영역*/
+#bodySection {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 992px) {
+    #bodySection {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
+/*인디케이터영역*/
+#indicatorSection {
+    width: 300px;
+    text-align: center;
+    height: fit-content;
+    margin-right: 20px;
+}
+.tailsBox {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    justify-content: space-evenly;
+}
+.top {
+    background-color: #006be6;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.tails {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.tailsHighlight {
+    background-color: #212529a9;
+    color: white;
+}
+.tails:hover {
+    background-color: #212529;
+    color: white;
+}
+@media (max-width: 992px) {
+    #indicatorSection {
+        width: 100%;
+        margin-right: 0px;
+    }
+    .tailsBox {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .tails {
+        width: 30%;
+    }
+}
+
+/*보드섹션*/
+#boardSection {
+    width: 100%;
+    margin-left: 20px;
+}
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+.titleText {
+    padding-top: 36px;
+    font-size: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    word-break: break-all;
+}
+.tailsTime {
+    height: auto;
+    display: flex;
+    padding-top: 72px;
+    flex-direction: column;
+    justify-content: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.board {
+    padding: 20px;
+    font-size: 24px;
+}
+.board > img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+@media (max-width: 992px) {
+    #boardSection {
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+}
+
+/*푸터 영역*/
+footer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #212529;
+    border: 2px solid white;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 20px;
+}
+footer > p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+@media (max-width: 992px) {
+    footer {
+        width: 100%;
+    }
+}
+#개인정보처리방침, #이메일무단수집거부 {
+    margin: 5px;
+    background-color: #0c0e0f;
+    color: white;
+    padding: 1px 2px;
+}
+#개인정보처리방침:hover, #이메일무단수집거부:hover {
+    margin: 5px;
+    background-color: white;
+    color: #0c0e0f;
+    padding: 1px 2px;
+}
