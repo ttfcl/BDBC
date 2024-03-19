@@ -17,7 +17,7 @@ body {
 }
 /*로고영역*/
 #logoSection {
-    width: 80%;
+    width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +33,7 @@ body {
     border: 2px solid white;
 }
 nav {
-    background-color: black;
+    background-color: #FC5230;
     border: 1px solid rgba(128, 128, 128, 0.438);
 }
 #navBox {
@@ -89,13 +89,20 @@ nav {
     }    
 } 
 
-/*캐러셀영역*/
-#carouselSeciton {
+/*배너영역*/
+#bannerSection {
     width: 50%;
     border: 2px solid white;
+} 
+#bannerSection > a > img {
+    width: 100%;
+    height: auto;
 }
-@media (max-width: 992px) {
-    #carouselSeciton {
+#bannerSection > a > img:hover{
+    filter: opacity(70%);
+}
+@media (max-width: 1500px) {
+    #bannerSection {
         width: 100%;
     }    
 }    
@@ -103,69 +110,105 @@ nav {
 /*카톡영역*/
 #katalkSection {
     width: 50%;
-    padding-top: 75px;
-    padding-bottom: 75px;
-    border: 2px solid white;
-    background-image: linear-gradient(135deg,rgb(0, 99, 0) 75%, rgb(221, 221, 0) 75% 85%, rgb(0, 99, 0) 85%);
+    /* padding-top: 25px;
+    padding-bottom: 25px; */
+    text-align: center;
+    border: 2px solid white;   
 }
-#katalkSection > a {
+#katalkSection > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
     text-decoration: none;
     width: 100%;
+    height: 50%;
+}
+.box1 {
+    background-image: url(mainimage/bg1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+}
+.box1 > p {
+    font-size: 24px
+}
+.box2 {
+    width: 100%;
+    background-color: #212529;
+}
+.box2  > img {
     height: 100%;
-    padding-left: 10px;
 }
-#katalkSection:hover {
-    filter: contrast(60%);
-    transition: 0.5s;
+.box2  > img:hover  {
+    filter:brightness(130%);
 }
-@media (max-width: 992px) {
+#katalkSection > div > h1 {
+    color: white;
+    text-decoration: none;
+}
+#katalkSection > div > a > button {
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10rem;
+    color: black;
+}
+#katalkSection > div > a > button:hover {
+    background-color: #0c0e0f;
+    color: white;
+}
+@media (max-width: 1500px) {
     #katalkSection {
         width: 100%;
         margin-top: 25px;
-        text-align: center;
-    }    
+    }   
+    
 } 
-
-/*콘텐츠영역*/
-.contantSection {
-    width: 33.3%;
-    padding-top: 75px;
-    padding-bottom: 75px;
-    border: 2px solid white;
-}
-.contantSection2 {
-    width: 20%;
-    padding-top: 75px;
-    padding-bottom: 75px;
-    border: 2px solid white;
-}
-.contantSection > a, .contantSection2 > a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    word-break: keep-all;
-    color: white;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
+.percent {
+    animation-name: color3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-size: 84px;
+    font-weight: 700;
     padding-left: 10px;
+    padding-right: 10px;
 }
-.contantSection:hover, .contantSection2:hover {
-    filter: contrast(60%);
-    transition: 0.5s;
+@keyframes color3 {
+    0% {
+        color: white;
+        
+    }
+    100% {
+        color: rgb(255, 0, 0);
+    }
 }
-@media (max-width: 992px) {
-    .contantSection, .contantSection2 {
-        width: 50%;
-        margin-top: 25px;
-        text-align: center;
-    }    
-} 
 
+
+/*배너영역2*/
+#bannerSection2 {
+    width: 100% ;
+    border: 2px solid white; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#bannerSection2 > img {
+    width: 33%;
+}
+#bannerSection2 > img:hover {
+    filter: opacity(70%);
+}
+@media (max-width: 1500px) {
+    #bannerSection2 > img {
+        width: 100%;
+    }  
+    
+} 
 
 /* 알림영역
 #alretSection {
@@ -208,13 +251,13 @@ footer > p {
         width: 100%;
     }
 }
-#개인정보처리방침, #이메일무단수집거부 {
+#개인정보처리방침, #이메일무단수집거부, #이용약관 {
     margin: 5px;
     background-color: #0c0e0f;
     color: white;
     padding: 1px 2px;
 }
-#개인정보처리방침:hover, #이메일무단수집거부:hover {
+#개인정보처리방침:hover, #이메일무단수집거부:hover, #이용약관:hover {
     margin: 5px;
     background-color: white;
     color: #0c0e0f;
