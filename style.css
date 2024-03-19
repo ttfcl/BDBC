@@ -33,7 +33,7 @@ body {
     border: 2px solid white;
 }
 nav {
-    background-color: black;
+    background-color: #FC5230;
     border: 1px solid rgba(128, 128, 128, 0.438);
 }
 #navBox {
@@ -130,6 +130,9 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 30px;
+}
+.box1 > p {
+    font-size: 24px
 }
 .box2 {
     width: 100%;
