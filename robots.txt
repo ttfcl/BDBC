@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-#DaumWebMasterTool:75715d94239a907c87ccbe618f290c9ef034371b32c1545da2c7bc4c51081c97:CoNm9OIQKISicxFrCgZhqg==
+Allow: /
+Sitemap: http://bdbcinvest.kro.kr/sitemap.xml
+
