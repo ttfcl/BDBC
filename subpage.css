@@ -180,10 +180,10 @@ nav {
 .board {
     padding: 20px;
     font-size: 24px;
-    color: white;
+    /* color: white;
     background-image: url(backimg.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 .board > img {
     width: 100%;
@@ -264,16 +264,17 @@ footer > p {
         width: 100%;
     }
 }
-#개인정보처리방침, #이메일무단수집거부, #이용약관 {
+#개인정보처리방침, #이메일무단수집거부, #이용약관, #a2 ,#a3, #a4, #a5{
     margin: 5px;
     background-color: #0c0e0f;
     color: white;
     padding: 1px 2px;
 }
-#개인정보처리방침:hover, #이메일무단수집거부:hover, #이용약관:hover {
+#개인정보처리방침:hover, #이메일무단수집거부:hover, #이용약관:hover, #a2:hover ,#a3:hover, #a4:hover, #a5:hover {
     margin: 5px;
     background-color: white;
     color: #0c0e0f;
     padding: 1px 2px;
 }
+
 
