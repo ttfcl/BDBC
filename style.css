@@ -122,8 +122,12 @@ nav {
     color: white;
     text-decoration: none;
     width: 100%;
-    height: 50%;
 }
+@media (min-width:992px) {
+    #katalkSection > div {
+        height: 50%;
+    }
+} 
 .box1 {
     background-image: url(mainimage/bg1.png);
     background-position: center;
