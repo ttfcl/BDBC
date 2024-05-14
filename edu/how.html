@@ -123,10 +123,22 @@
       </div>
     </section>
   </section>
- <!-- Talk Talk Banner Script start -->
- <script type="text/javascript" src="https://partner.talk.naver.com/banners/script"></script>
- <div class="talk_banner_div" style="position: fixed; bottom: 50px; right: 10px;" data-id="147224"></div>
- <!-- Talk Talk Banner Script end -->
+<!-- Talk Talk Banner Script start -->
+<script type="text/javascript" src="https://partner.talk.naver.com/banners/script"></script>
+<div class="talk_banner_div" data-id="147224"></div>
+<style>
+  .talk_banner_div {
+    position: fixed; 
+    bottom: 50px; 
+    right: 10px;
+  }
+  @media (max-width:1000px) {
+    .talk_banner_div {
+      display: none;
+    }
+  }
+</style>
+<!-- Talk Talk Banner Script end -->
   <footer>
     <p>© 2024 All rights reserved by BDBC 투자연구소</p>
     <div><button id="이메일무단수집거부">이메일무단수집거부</button><button id="개인정보처리방침">개인정보처리방침</button><button id="이용약관">이용약관</button><button id="a2">게시물 운영 및 저작권 정책</button><button id="a3">내부통제기준</button><button id="a4">전문가 윤리강령</button><button id="a5">준법서약서</button></div>

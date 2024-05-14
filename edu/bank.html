@@ -133,7 +133,19 @@
   </section>
  <!-- Talk Talk Banner Script start -->
  <script type="text/javascript" src="https://partner.talk.naver.com/banners/script"></script>
- <div class="talk_banner_div" style="position: fixed; bottom: 50px; right: 10px;" data-id="147224"></div>
+ <div class="talk_banner_div" data-id="147224"></div>
+ <style>
+   .talk_banner_div {
+     position: fixed; 
+     bottom: 50px; 
+     right: 10px;
+   }
+   @media (max-width:1000px) {
+     .talk_banner_div {
+       display: none;
+     }
+   }
+ </style>
  <!-- Talk Talk Banner Script end -->
   <footer>
     <p>© 2024 All rights reserved by BDBC 투자연구소</p>
