@@ -35,7 +35,7 @@
               <a class="nav-link" href="https://bdbcinvest.kro.kr/reading/슈퍼개미프로젝트.html">슈퍼개미 프로젝트</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
+              <a class="nav-link" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,9 +79,11 @@
     <section id="boardSection">
       <div class="title">
         <div class="titleText">개인정보처리방침</div>
-        <div class="tailsTime"></div>
+        <div class="tailsTime" style="padding-top: 35px;">
+          <button class="" id="큰글씨">큰 글씨</button><button class="hide" id="작은글씨">작은글씨</button>
+        </div>  
       </div>
-      <div class="board" style="background-image: none; color: black;">
+      <div class="board" id="board" style="background-image: none; color: black;">
         (주)BDBC투자연구소(이하 ‘회사’라 한다)는 개인정보 보호법 제30조에 따라 정보 주체의 개인정보를 보호하고 이와 관련한 고충을 신속하게 처리할 수 있도록 하기 위해 다음과 같이 개인정보 처리방침을 수립, 공개합니다.</br></br>
 
         제1조(개인정보의 처리목적)</br>
@@ -193,34 +195,62 @@
         
         
       </div>
+      <style>
+        #큰글씨, #작은글씨 {
+          background-color: rgb(61, 200, 255);
+          color: white;
+          padding: 10px 20px;
+        }
+        .bigBoard {
+          padding: 20px;
+          font-size: 24px;
+        }
+        .smallBoard {
+          padding: 20px;
+          font-size: 16px;
+        }
+        .hide {
+          display: none;
+        }
+        @media (min-width:1000px) {
+          .tailsTime {
+            display: none;
+          }
+        } 
+        @media (max-width:1000px) {
+          .board {
+            font-size: 16px;
+          }
+          .titleText {
+            font-size: 32px;
+          }
+        } 
+      </style>
+      <script>
+        let big = document.querySelector("#큰글씨")
+        let small = document.querySelector("#작은글씨")
+        let board = document.querySelector("#board")
+        big.onclick = () => {
+          big.classList.add("hide")
+          small.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("smallBoard")
+          board.classList.add("bigBoard")
+        }
+        small.onclick = () => {
+          small.classList.add("hide")
+          big.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("bigBoard")
+          board.classList.add("smallBoard")
+        }
+      </script>
     </section>
   </section>
  <!-- Talk Talk Banner Script start -->
  <script type="text/javascript" src="https://partner.talk.naver.com/banners/script"></script>
  <div id="ban1" class="talk_banner_div" data-id="147248"></div>
  <div id="ban2" class="talk_banner_div" data-id="147224"></div>
- <style>
-   @media (min-width:1000px) {
-     #ban1 {
-       display: none;
-     }
-     #ban2 {
-     position: fixed; 
-     bottom: 50px; 
-     right: 10px;
-     }
-   }
-   @media (max-width:1000px) {
-     #ban2 {
-       display: none;
-     }
-     #ban1 {
-     position: fixed; 
-     bottom: 50px; 
-     right: 10px;
-     }
-   }
- </style>
  <!-- Talk Talk Banner Script end -->
   <footer>
     <p>© 2024 All rights reserved by BDBC 투자연구소</p>

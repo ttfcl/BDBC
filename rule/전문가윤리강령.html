@@ -35,7 +35,7 @@
               <a class="nav-link" href="https://bdbcinvest.kro.kr/reading/슈퍼개미프로젝트.html">슈퍼개미 프로젝트</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
+              <a class="nav-link" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,9 +79,11 @@
     <section id="boardSection">
       <div class="title">
         <div class="titleText">서비스 이용 유의사항 및 이용약관</div>
-        <div class="tailsTime"></div>
+        <div class="tailsTime" style="padding-top: 35px;">
+          <button class="" id="큰글씨">큰 글씨</button><button class="hide" id="작은글씨">작은글씨</button>
+        </div>
       </div>
-      <div class="board" style="background-image: none; color: black;">
+      <div class="board" id="board" style="background-image: none; color: black;">
         본인은 유사투자자문업을 영위하는 자로써 증권 컨텐츠를 제공함에 있어 아래의 윤리강령과 자본시장과 금융투자업에 관한 법률 및 기타 관련법규를 준수하여 회원들의 권익을 보호하며 선량한 풍속과 기타 사회질서에 위배되지 않는 건전한 증권문화를 선도해 나갈 것을 서약합니다.</br></br>
 
         ①본인은 오직 사실에 근거한 전문적인 정보만을 제공하겠습니다.</br>
@@ -95,6 +97,56 @@
         ⑨게시물의 저작권자로서 게시물의 게시와 관련된 법적 책임은 본인이 부담합니다.</br>
         ⑩본인은 서비스가 제공되는 모든 사이트의 건전한 증권문화 확립이념에 동의하며, 증권 당국의 정책을 준수하고 회원들의 건전한 투자문화 확립을 위해 노력하겠으며, 본인이 본 강령의 규정을 위반한 경우 정보의 수정 등을 비롯하여 필요한 조치를 적극적으로 이행하도록 하겠습니다.</br>
       </div>
+      <style>
+        #큰글씨, #작은글씨 {
+          background-color: rgb(61, 200, 255);
+          color: white;
+          padding: 10px 20px;
+        }
+        .bigBoard {
+          padding: 20px;
+          font-size: 24px;
+        }
+        .smallBoard {
+          padding: 20px;
+          font-size: 16px;
+        }
+        .hide {
+          display: none;
+        }
+        @media (min-width:1000px) {
+          .tailsTime {
+            display: none;
+          }
+        } 
+        @media (max-width:1000px) {
+          .board {
+            font-size: 16px;
+          }
+          .titleText {
+            font-size: 32px;
+          }
+        } 
+      </style>
+      <script>
+        let big = document.querySelector("#큰글씨")
+        let small = document.querySelector("#작은글씨")
+        let board = document.querySelector("#board")
+        big.onclick = () => {
+          big.classList.add("hide")
+          small.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("smallBoard")
+          board.classList.add("bigBoard")
+        }
+        small.onclick = () => {
+          small.classList.add("hide")
+          big.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("bigBoard")
+          board.classList.add("smallBoard")
+        }
+      </script>
     </section>
   </section>
  <!-- Talk Talk Banner Script start -->

@@ -35,7 +35,7 @@
               <a class="nav-link" href="https://bdbcinvest.kro.kr/reading/슈퍼개미프로젝트.html">슈퍼개미 프로젝트</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
+              <a class="nav-link" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,9 +79,11 @@
     <section id="boardSection">
       <div class="title">
         <div class="titleText">내부통제기준</div>
-        <div class="tailsTime"></div>
+        <div class="tailsTime" style="padding-top: 35px;">
+          <button class="" id="큰글씨">큰 글씨</button><button class="hide" id="작은글씨">작은글씨</button>
+        </div>  
       </div>
-      <div class="board" style="background-image: none; color: black;">
+      <div class="board" id="board" style="background-image: none; color: black;">
         제1장 총칙</br></br>
         제1조(목적)</br>
         이 기준은 (주)BDBC투자연구소(이하 ‘회사’라 한다)가 자본시장과 유사투자자문업에 관한 법률에 따라 임직원이 직무를 수행함에 있어 법령을 준수하고, 정보제공을 건전하게 하며, 고객을 보호하기 위해 준수해야 할 기본적인 절차와 기준(이하 “내부통제기준”이라 한다)을 정하는데 그 목적이 있다.</br>
@@ -135,6 +137,56 @@
         내부통제기준 버전 번호 : Ver 1.0</br>
         내부통제기준 시행 일자 : 2024년 5월 26일</br>
       </div>
+      <style>
+        #큰글씨, #작은글씨 {
+          background-color: rgb(61, 200, 255);
+          color: white;
+          padding: 10px 20px;
+        }
+        .bigBoard {
+          padding: 20px;
+          font-size: 24px;
+        }
+        .smallBoard {
+          padding: 20px;
+          font-size: 16px;
+        }
+        .hide {
+          display: none;
+        }
+        @media (min-width:1000px) {
+          .tailsTime {
+            display: none;
+          }
+        } 
+        @media (max-width:1000px) {
+          .board {
+            font-size: 16px;
+          }
+          .titleText {
+            font-size: 32px;
+          }
+        } 
+      </style>
+      <script>
+        let big = document.querySelector("#큰글씨")
+        let small = document.querySelector("#작은글씨")
+        let board = document.querySelector("#board")
+        big.onclick = () => {
+          big.classList.add("hide")
+          small.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("smallBoard")
+          board.classList.add("bigBoard")
+        }
+        small.onclick = () => {
+          small.classList.add("hide")
+          big.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("bigBoard")
+          board.classList.add("smallBoard")
+        }
+      </script>
     </section>
   </section>
  <!-- Talk Talk Banner Script start -->

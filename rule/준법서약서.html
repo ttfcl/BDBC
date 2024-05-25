@@ -35,7 +35,7 @@
               <a class="nav-link" href="https://bdbcinvest.kro.kr/reading/슈퍼개미프로젝트.html">슈퍼개미 프로젝트</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
+              <a class="nav-link" href="https://bdbcinvest.kro.kr/edu/edu.html">투자 교육 자료</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,9 +79,11 @@
     <section id="boardSection">
       <div class="title">
         <div class="titleText">서비스 이용 유의사항 및 이용약관</div>
-        <div class="tailsTime"></div>
+        <div class="tailsTime" style="padding-top: 35px;">
+          <button class="" id="큰글씨">큰 글씨</button><button class="hide" id="작은글씨">작은글씨</button>
+        </div>  
       </div>
-      <div class="board" style="background-image: none; color: black;">
+      <div class="board" id="board" style="background-image: none; color: black;">
         본인은 직무를 수행함에 있어 회사의 내부통제기준에서 정하는 바에 따라 자본시장과 금융투자업에 관한 법률 및 기타 관련법규를 준수하고 회원들의 권익을 보호하며 선량한 풍속과 기타 사회질서에 위배되지 않는 건전한 증권문화를 선도해 나갈 것을 서약합니다.</br></br>
 
         ①나는 회사의 내부통제기준과 관련 법규를 준수하고 직무를 수행함에 있어 신의성실로 임하겠습니다.</br>
@@ -92,6 +94,56 @@
         ⑥나는 회사의 경영에 위기를 초래할 수 있는 행위에 참여하거나 방조하지 않겠습니다.</br>
         본인은 직무를 수행하면서 법규를 위반하거나 고객이익과 회사재산을 침해하여 준법서약을 위약한 경우에는 관련규정에 따른 어떠한 불이익도 감수하겠습니다.</br>
       </div>
+      <style>
+        #큰글씨, #작은글씨 {
+          background-color: rgb(61, 200, 255);
+          color: white;
+          padding: 10px 20px;
+        }
+        .bigBoard {
+          padding: 20px;
+          font-size: 24px;
+        }
+        .smallBoard {
+          padding: 20px;
+          font-size: 16px;
+        }
+        .hide {
+          display: none;
+        }
+        @media (min-width:1000px) {
+          .tailsTime {
+            display: none;
+          }
+        } 
+        @media (max-width:1000px) {
+          .board {
+            font-size: 16px;
+          }
+          .titleText {
+            font-size: 32px;
+          }
+        } 
+      </style>
+      <script>
+        let big = document.querySelector("#큰글씨")
+        let small = document.querySelector("#작은글씨")
+        let board = document.querySelector("#board")
+        big.onclick = () => {
+          big.classList.add("hide")
+          small.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("smallBoard")
+          board.classList.add("bigBoard")
+        }
+        small.onclick = () => {
+          small.classList.add("hide")
+          big.classList.remove("hide")
+          board.classList.remove("board")
+          board.classList.remove("bigBoard")
+          board.classList.add("smallBoard")
+        }
+      </script>
     </section>
   </section>
 
