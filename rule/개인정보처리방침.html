@@ -63,7 +63,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="https://talk.naver.com/ct/w5zccb">문의하기</a>
+              <a class="nav-link" target="_blank" href="https://talk.naver.com/ct/w5zccb">신청하기</a>
             </li>
           </ul>
         </div>
@@ -258,6 +258,28 @@
  <script type="text/javascript" src="https://partner.talk.naver.com/banners/script"></script>
  <div id="ban1" class="talk_banner_div" data-id="147248"></div>
  <div id="ban2" class="talk_banner_div" data-id="147224"></div>
+ <style>
+  @media (min-width:1000px) {
+    #ban1 {
+      display: none;
+    }
+    #ban2 {
+    position: fixed; 
+    bottom: 50px; 
+    right: 10px;
+    }
+  }
+  @media (max-width:1000px) {
+    #ban2 {
+      display: none;
+    }
+    #ban1 {
+    position: fixed; 
+    bottom: 50px; 
+    right: 10px;
+    }
+  }
+</style>
  <!-- Talk Talk Banner Script end -->
   <footer>
     <p>© 2024 All rights reserved by BDBC 투자연구소</p>
