@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="description" property="og:description" content="일목균형표, 이동평균, 볼린저밴드, 거래량지표를 복합적으로 활용한 기술적 분석 제공합니다. 합리적인 가격과 타당한 근거를 통해 안정적인 투자를 경험해보세요.">
+    <meta property="og:image" content="mainimage/main123.png">
+    <meta property="og:title" content="슈퍼개미프로젝트 - BDBC투자연구소"> 
+    <meta property="og:url" content="https://bdbcinvest.kro.kr">
+  <title>BDBC 투자연구소</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      background-color: #f2f4f8;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 30px 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: #003366;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .summary-box {
+      background-color: #e0f7fa;
+      color: #006064;
+      padding: 15px;
+      font-size: 1.4em;
+      font-weight: bold;
+      border-radius: 8px;
+      border: 2px solid #4dd0e1;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    .links a {
+      display: block;
+      font-weight: bold;
+      color: #1a73e8;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .links p {
+      margin: 5px 0 20px;
+      font-size: 0.95em;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      iframe {
+        height: 220px;
+      }
+
+      .summary-box {
+        font-size: 1.2em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📈 BDBC 투자연구소</h1>
+
+    <div class="section">
+      <h2>🎥 25.05.08 경제뉴스</h2>
+      <iframe src="https://www.youtube.com/embed/ztD91YskbdQ" allowfullscreen></iframe>
+      <p>
+        ※뉴스요약<br>
+        1. 수도권 전세 시장, 다시 긴장 국면<br>
+        2. 코스피, 기관 매수에 힘입어 2580선을 회복<br>
+        3. 미래에셋증권, 1분기 순이익 2582억 원으로 53% 증가<br>
+        4. 제이앤티씨, 자회사 코메트 흡수합병을 결정<br>
+        5. 우리투자증권, IRP 수익률 1위 기록<br>
+        6. 금융위, 자본시장 선진화 성과를 발표<br>
+        7. 하나금융나눔재단, 다문화가정 대상 공모<br>
+        8. 카카오페이증권, 반도체 ETF 투자에 서학개미 집중
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>📢 실시간 종목 알림 받기</h2>
+      <div class="links">
+        <a href="https://t.me/+0e6TIoV5Qy4zMDll" target="_blank">🔗 AI 국내주식 당일단타 텔레그램 이동하기(클릭)</a>
+        <p>기술적 분석과 뉴스, 재무제표, 수급 및 투자동향을 종합하여 인공지능의 분석을 통한 결과물을 바탕으로 데이트레이딩, 단기투자에 적합한 종목을 추천합니다.</p>
+
+        <a href="https://t.me/+J5vBKMLj53czMTVl" target="_blank">🔗 AI 미국주식 당일~2주 스윙 텔레그램 이동하기(클릭)</a>
+        <p>기관들이 사용하는 투자방식과 당일 뉴스, 투자자의 관심도, 당일 수급크기 등을 유량적으로 분석하여 종목을 추천합니다. 당일투자 및 단기스윙에 적합합니다.</p>
+      </div>
+    </div>
+
+    <!-- 국내주식 수익률 -->
+    <div class="section">
+      <h2>📊 국내주식 5월 수익률 기록</h2>
+      <div id="korea-summary" class="summary-box">📌 국내주식 종합 수익률 계산 중...</div>
+      <div style="overflow-x: auto;">
+        <table id="korea-table">
+          <thead>
+            <tr>
+              <th>날짜</th>
+              <th>종목(코드)</th>
+              <th>매수여부</th>
+              <th>추천가</th>
+              <th>추천가대비고가</th>
+              <th>수익률</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+             <td>2025-05-01</td>
+              <td>삼성전자자자자자자자자자자</td>
+              <td>○</td>
+              <td>70,000</td>
+              <td>73,500</td>
+              <td>+5.2%</td> 
+            </tr>
+            <!-- 추가 데이터는 여기에 삽입 -->
+          </tbody>
+        </table>
+      </div>
+      <div class="links">
+        <a href="https://bdbcinvest.kro.kr/log/korea.html" target="_blank">이전 기간 추천 기록 확인하기</a>
+      </div>
+    </div>
+
+    <!-- 미국주식 수익률 -->
+    <div class="section">
+      <h2>📊 미국주식 5월 수익률 기록</h2>
+      <div id="us-summary" class="summary-box">📌 미국주식 종합 수익률 계산 중...</div>
+      <div style="overflow-x: auto;">
+        <table id="us-table">
+          <thead>
+            <tr>
+              <th>날짜</th>
+              <th>종목(티커)</th>
+              <th>추천가</th>
+              <th>추천가대비고가</th>
+              <th>매도시점</th>
+              <th>수익률</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-05-01</td>
+              <td>삼성전자자자자자자자자자자</td>
+              <td>○</td>
+              <td>70,000</td>
+              <td>73,500</td>
+              <td>+5.2%</td>
+            </tr>
+            <!-- 추가 데이터는 여기에 삽입 -->
+          </tbody>
+        </table>
+      </div>
+      <div class="links">
+        <a href="https://bdbcinvest.kro.kr/log/korea.html" target="_blank">이전 기간 추천 기록 확인하기</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateReturn(tableId, summaryId) {
+      const table = document.getElementById(tableId);
+      const rows = table.querySelectorAll('tbody tr');
+      let total = 0, count = 0;
+
+      rows.forEach(row => {
+        const cell = row.cells[row.cells.length - 1];
+        const text = cell.textContent.trim().replace('%', '').replace('+','');
+        const value = parseFloat(text);
+        if (!isNaN(value)) {
+          total += value;
+          count++;
+        }
+      });
+
+      const avg = count ? (total / count).toFixed(2) : 0;
+      const summary = document.getElementById(summaryId);
+      const isKorea = summaryId.includes('korea');
+      summary.textContent = `📌 ${isKorea ? '국내' : '미국'}주식 종합 수익률: ${avg >= 0 ? '+' : ''}${avg}%`;
+
+      // 색상 변경
+      if (avg > 0) {
+        summary.style.backgroundColor = '#e8f5e9';
+        summary.style.color = '#2e7d32';
+        summary.style.borderColor = '#a5d6a7';
+      } else if (avg < 0) {
+        summary.style.backgroundColor = '#ffebee';
+        summary.style.color = '#c62828';
+        summary.style.borderColor = '#ef9a9a';
+      } else {
+        summary.style.backgroundColor = '#eeeeee';
+        summary.style.color = '#333';
+        summary.style.borderColor = '#ccc';
+      }
+    }
+
+    calculateReturn('korea-table', 'korea-summary');
+    calculateReturn('us-table', 'us-summary');
+  </script>
+</body>
+</html>
