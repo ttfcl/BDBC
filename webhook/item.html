@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>텔레그램 알림 봇 – 유사투자자문업자 전용</title>
+  <meta name="description" content="유사투자자문업자가 고객에게 제공할 수 있는 텔레그램 정보 알림 봇 – 미국 IPO, 나스닥 어닝서프라이즈, 국내 커스텀 조건식 알림" />
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    /* —— Base —— */
+    :root{ --bg:#ffffff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --brand:#111827; --radius:14px }
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{ margin:0; background:var(--bg); color:var(--text); font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans KR, Helvetica, Arial; line-height:1.65 }
+    a{ color:inherit; text-decoration:none }
+    .container{ width:min(980px,92vw); margin:0 auto }
+
+    /* —— Header —— */
+    header{ position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--line) }
+    .nav{ display:flex; align-items:center; justify-content:space-between; height:64px }
+    .brand{ display:flex; gap:10px; align-items:center; font-weight:700 }
+    .logo{ width:28px; height:28px; border-radius:6px; border:1px solid var(--line); display:grid; place-items:center; font-size:12px }
+    .links{ display:flex; gap:18px; align-items:center }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:#fff; font-weight:600 }
+    .btn.primary{ background:var(--brand); color:#fff; border-color:var(--brand) }
+
+    /* —— Sections —— */
+    section{ padding:56px 0 }
+    h1,h2,h3{ line-height:1.25; margin:0 0 8px }
+    h1{ font-size:clamp(28px,3.4vw,42px) }
+    h2{ font-size:24px }
+    p.lead{ color:var(--muted); margin:0 }
+
+    /* —— Grid & Cards —— */
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+    @media (max-width:960px){ .grid{ grid-template-columns:1fr } }
+    .card{ border:1px solid var(--line); border-radius:var(--radius); padding:18px; background:#fff }
+    .card h3{ font-size:18px; margin:0 0 6px }
+    .list{ list-style:none; padding:0; margin:8px 0 0; display:grid; gap:6px }
+    .list li{ color:#374151; font-size:14px }
+
+    /* —— Steps —— */
+    .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+    @media (max-width:960px){ .steps{ grid-template-columns:1fr } }
+    .step{ border:1px solid var(--line); border-radius:var(--radius); padding:14px; font-size:14px }
+
+    /* —— Pricing —— */
+    .pricing{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+    @media (max-width:960px){ .pricing{ grid-template-columns:1fr } }
+    .price{ border:1px solid var(--line); border-radius:var(--radius); padding:18px }
+    .amt{ font-size:28px; font-weight:800; margin:8px 0 }
+    .note{ color:var(--muted); font-size:14px }
+
+    /* —— Slots —— */
+    .slot{ border:1px dashed var(--line); border-radius:12px; padding:14px; background:#fafafa; color:#6b7280; font-size:14px; margin-top:10px }
+
+    /* —— Footer —— */
+    footer{ border-top:1px solid var(--line); padding:36px 0; color:var(--muted) }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">BD</div>
+        <div>텔레그램 알림봇</div>
+      </div>
+      <nav class="links">
+        <a href="#services">서비스</a>
+        <a href="#pricing">요금</a>
+        <a href="#deliver">제공 내용</a>
+        <a href="#usecases">활용 사례</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn primary" target="_blank" href="https://open.kakao.com/o/sAKSAgOh">문의하기</a>
+      
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>유사투자자문업자를 위한 <br/> 고객 제공용 텔레그램 정보 알림 봇</h1>
+      <p class="lead">운영 중인 텔레그램 채널, 또는 신규 채널에 봇을 연동하여, 고객에게 <b>미국 IPO</b>·<b>나스닥 어닝 서프라이즈</b>·<b>국내 조건식 만족</b> 알림을 자동 전송합니다.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px">
+        <a class="btn primary" href="#contact">가입 문의</a>
+        <a class="btn" href="#services">서비스 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>제공 서비스</h2>
+      </br>
+      <p class="lead">다음과 같은 봇들이 준비되어 있으며, 추후 새로운 봇들이 추가 될 수 있습니다.</p>
+      <p class="lead">여러개의 봇을 구매할 경우, 채널 하나에 추가할 수도, 또는 채널별 한개의 서로 다른 봇을 추가할 수도 있습니다.</p>
+      <p class="lead">단, 1개의 서비스가 연동될 수 있는 최대 채널 수는 1개입니다.</p>
+      <p class="lead">여러 개의 채널에 같은 서비스의 봇을 추가하려면 그 수만큼 구매하셔야 합니다.</p>
+      </br>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h3>① 미국주식 IPO(상장 알림이)</h3>
+          <p class="lead">당일 상장 예정 종목을 심볼·기업명·시장·상장일로 간결하게 공지합니다.</p>
+          <div class="slot" aria-label="서비스 상세 콘텐츠 삽입 영역">
+            한국 시간 기준 16기 50분에 알림이 전송됩니다. 미국 주식시장(나스닥, 아멕스, 뉴욕) 종목만 해당됩니다. 
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <h3>② 나스닥 어닝 서프라이즈 알림이</h3>
+          <p class="lead">EPS 서프라이즈 임계치(10%)보다 높은 종목을 텔레그램을 통해 전송됩니다.</p>
+          <div class="slot" aria-label="서비스 상세 콘텐츠 삽입 영역">티커, 예상 주당 이익, 실제 주당 이익, 괴리율(임계치)를 전송합니다. 16시 50분에 전송되며, 전일 장마감 후 발표부터 당일 장전 발표까지 보내드립니다.</div>
+        </article>
+        <article class="card" role="listitem">
+          <h3>③ 국내주식 조건식 만족 알림</h3>
+          <p class="lead">보유하신 조건식을 만족한 종목을 주기적으로 체크해 알림을 보냅니다.</p>
+          <div class="slot" aria-label="서비스 상세 콘텐츠 삽입 영역">사전에 보유하고 계신 조건식을 만족한 종목을 보내드립니다. 5초 단위로 만족여부를 검토합니다.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <h2>요금 (월 구독제)</h2>
+      <p class="lead">서비스별로 구독하여 필요한 기능만 선택적으로 사용하세요.</p>
+      <div class="pricing">
+        <div class="price">
+          <h3>미국주식 IPO 알림</h3>
+          <div class="amt">₩11,000<span class="note"> /월 vat 포함</span></div>
+          <ul class="list">
+            <li>당일 상장 예정 종목 알림</li>
+            <li>메시지 템플릿 커스텀</li>
+          </ul>
+        </div>
+        <div class="price">
+          <h3>나스닥 어닝 서프라이즈 알림</h3>
+          <div class="amt">₩11,000<span class="note"> /월 vat 포함</span></div>
+          <ul class="list">
+            <li>임계치(%)에 따른 메시지 발송</li>
+            <li>중복 억제/쿨다운</li>
+          </ul>
+        </div>
+        <div class="price">
+          <h3>국내주식 조건식 만족 알림</h3>
+          <div class="amt">₩55,000<span class="note"> /월 vat 포함</span></div>
+          <ul class="list">
+            <li>키움, 한투 조건식</li>
+            <li>중복 방지</li>
+            <li>5초 주기 점검</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note" style="margin-top:10px">* 가격은 월 정기 결제 기준입니다.</p>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section id="deliver">
+    <div class="container">
+      <h2>제공/비제공 범위</h2>
+      <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="card">
+          <h3>제공 내용</h3>
+          <ul class="list">
+            <li>정보 제공용 텔레그램 봇</li>
+            <li>텔레그램 채널 제작(기초)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>제공하지 않는 내용</h3>
+          <ul class="list">
+            <li>텔레그램 채널 관리(구독자, 초대링크, 운영정책 등)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="usecases">
+    <div class="container">
+      <h2>활용 사례</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>유튜브 구독자 제공 서비스 채널</h3>
+          <p class="lead">멤버십/구독자에게만 입장 가능한 텔레그램 채널을 열고, 알림 봇으로 차별화된 정보를 제공합니다.</p>
+        </div>
+        <div class="card">
+          <h3>기존 운영 방에 기능 추가</h3>
+          <p class="lead">이미 운영 중인 텔레그램 방에 봇을 초대해 IPO/어닝/조건식 알림 기능만 가볍게 덧붙입니다.</p>
+        </div>
+        <div class="card">
+          <h3>신규 서비스</h3>
+          <p class="lead">기존 운영하시던 사업에 텔레그램을 추가하여 신규 사업으로 확장 가능</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice -->
+  <section>
+    <div class="container">
+      <div class="card">
+        <h3>법적 내용</h3>
+        <p class="lead">텔레그램은 양방향 채널이 아니므로 유사투자자문업 관련 법규에 저촉되지 않습니다.</p>
+        <p class="lead">해당 서비스를 통해 일반 고객에게 입장권을 판매하는 것은 가능하지만 다른 유사투자자문업자에게 판매하는 것은 금지됩니다.</p>
+        <p class="lead"><b>해당 서비스는 단순 정보 제공용입니다. 해당 정보를 통한 매매의 결과에 대해서 정보 제공업자(BDBC투자연구소)는 어떠한 책임도 지지 않습니다.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <details><summary>여러 텔레그램 방에 동시에 보낼 수 있나요?</summary><p>가능합니다. 단, 이 경우 같은 서비스를 여러번 구매가 필요합니다.</p></details>
+      <details><summary>데이터 정확도와 지연은?</summary><p>IPO, 어닝 서프라이즈는 기업 통합 배포망(글로벌와이어 등)을 활용합니다. 16시 50분 메시지 발송직전 시점까지 발표된 자료를 보내드립니다.</p></details>
+      <details><summary>법적 고지는 포함되나요?</summary><p>모든 메시지 하단에 투자자 유의 문구를 삽입할 수 있습니다.</p></details>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>도입 or 가입 문의</h2>
+      <p class="lead">필요 기능과 운영 규모를 알려주시면 맞춤 견적을 제공합니다.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+        <a class="btn primary" target="_blank"  href="https://open.kakao.com/o/sAKSAgOh">카톡 문의</a>
+        <a class="btn" href="#top">맨 위로</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px">
+      <div>© <span id="y"></span> BDBC투자연구소</div>
+      <div style="color:#9ca3af">ktx1016@naver.com</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
